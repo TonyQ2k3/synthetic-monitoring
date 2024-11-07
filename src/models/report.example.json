@@ -1,0 +1,33 @@
+{
+    "totalSuites": 3,
+    "totalTests": 3,
+    "totalFailed": 0,
+    "totalPassed": 3,
+    "totalPending": 0,
+    "totalSkipped": 0,
+    "duration": {
+        "startedAt": "2024-11-07T07:55:18.369Z",
+        "endedAt": "2024-11-07T07:55:22.174Z",
+        "totalDuration": 1540
+    },
+    "tests": [
+        {
+            "title": "POST /login",
+            "description": "Login to HSC ONE",
+            "state": "passed",
+            "duration": 864
+        },
+        {
+            "title": "GET /one-profile",
+            "description": "Getting user profile",
+            "state": "passed",
+            "duration": 349
+        },
+        {
+            "title": "GET /post",
+            "description": "gets a list of all jsonplaceholder posts",
+            "state": "passed",
+            "duration": 287
+        }
+    ]
+}

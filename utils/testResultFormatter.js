@@ -1,6 +1,6 @@
 module.exports = function monitorReportStatus(results) {
     const tests = [];
-    let formattedResult = { runs: [] };
+    let formattedResult = {};
   
     //if this is not the first run
     //use the results data to do simple formating
@@ -19,22 +19,20 @@ module.exports = function monitorReportStatus(results) {
   
       // Create custom test result object
         formattedResult = {
-            lastRun: {
-                totalSuites: results.totalSuites,
-                totalTests: results.totalTests,
-                totalFailed: results.totalFailed,
-                totalPassed: results.totalPassed,
-                totalPending: results.totalPending,
-                totalSkipped: results.totalSkipped,
-                duration: {
-                    startedAt: results.startedTestsAt,
-                    endedAt: results.endedTestsAt,
-                    totalDuration: results.totalDuration,
-                },
-                tests,
+            totalSuites: results.totalSuites,
+            totalTests: results.totalTests,
+            totalFailed: results.totalFailed,
+            totalPassed: results.totalPassed,
+            totalPending: results.totalPending,
+            totalSkipped: results.totalSkipped,
+            duration: {
+                startedAt: results.startedTestsAt,
+                endedAt: results.endedTestsAt,
+                totalDuration: results.totalDuration,
             },
+            tests,
         };
     }
   
     return formattedResult;
-  };
+};

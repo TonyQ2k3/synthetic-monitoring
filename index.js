@@ -1,25 +1,39 @@
+require('dotenv').config();
 const express = require('express');
+const cors = require('cors');
 const helmet = require('helmet');
 const CronJob = require('node-cron');
 const cypress = require('cypress');
+const mongoose = require('mongoose');
 const monitorReportStatus = require('./utils/testResultFormatter');
+const Report = require('./src/models/reportModel')
 
 
+// Initialize the express app
 const app = express();
 app.use(helmet());
+app.use(express.json());
+app.use(cors());
 
-const PORT = 8080;
-let CURRENT_SUMMARY = { runs: [] };
+const PORT = process.env.PORT || 8080;
+let CURRENT_SUMMARY = {};
 
-// Define a route for the root URL
+
+
+// Connect database
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => {
+    // Start the server
+    app.listen(PORT, () => {
+      console.log('Connected to Database');
+      console.log(`Server is running at http://localhost:${PORT}`);
+    });
+  })
+  .catch(err => console.log(err));
+
+
 app.get('/', (req, res) => {
-  const result = monitorReportStatus(CURRENT_SUMMARY);
-  res.status(200).json(result);
-});
-
-// Start the server
-app.listen(PORT, () => {
-  console.log(`Server is running at http://localhost:${PORT}`);
+  res.status(200).json(CURRENT_SUMMARY);
 });
 
 
@@ -35,7 +49,17 @@ try {
 
 async function runTestSuites() {
   try {
+    // Run the cypressTest
     runCypress();
+
+    // Save the result to MongoDB
+    if (Object.keys(CURRENT_SUMMARY).length != 0) {
+      const report = new Report(CURRENT_SUMMARY);
+      report.save()
+      .catch(err => {
+        console.log('[!] Something went wrong', err);
+      });
+    }
   } catch (error) {
     console.error('[!] Something went wrong', error);
   }
@@ -48,17 +72,16 @@ function runCypress() {
     .then((result) => {
       if (result.failures) {
         console.error('[!] Test failed to be executed!');
-        testResults = null;
+        CURRENT_SUMMARY = {};
         console.error(result.message);
         process.exit(result.failures);
       } 
       else {
-        testResults = result;
+        CURRENT_SUMMARY = monitorReportStatus(result);
       }
-      CURRENT_SUMMARY = testResults;
     })
     .catch((err) => {
       console.error(err.message);
-      process.exitCode = 1;
+      CURRENT_SUMMARY = {};
     });
 }

@@ -1,0 +1,4 @@
+node_modules
+.env
+cypress/e2e/hsc_**
+cypress/e2e/test_**

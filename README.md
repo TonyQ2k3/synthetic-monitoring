@@ -13,7 +13,6 @@ At the end of the testing process, a report will be generated and saved into a M
 ```
 CRON_SCHEDULE=*/1 * * * *
 MONGO_URI=<Database URI>
-PORT=8080
 ```
 4. Add your test cases to [cypress/e2e/](./cypress/e2e/). Guide on how to write these tests can be found [here](https://learn.cypress.io/advanced-cypress-concepts/integration-and-api-tests).
 5. Run the app with `npm start`

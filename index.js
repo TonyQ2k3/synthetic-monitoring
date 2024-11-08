@@ -6,16 +6,19 @@ const CronJob = require('node-cron');
 const cypress = require('cypress');
 const mongoose = require('mongoose');
 const monitorReportStatus = require('./utils/testResultFormatter');
-const Report = require('./src/models/reportModel')
+const Report = require('./src/models/reportModel');
+const { createTest } = require('./src/controllers/testController');
 
 
 // Initialize the express app
 const app = express();
 app.use(helmet());
 app.use(express.json());
+app.use(express.text());
+app.use(express.raw());
 app.use(cors());
 
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 let CURRENT_SUMMARY = {};
 
 
@@ -31,16 +34,20 @@ mongoose.connect(process.env.MONGO_URI)
   })
   .catch(err => console.log(err));
 
-
+// Handle GET request
 app.get('/', (req, res) => {
   res.status(200).json(CURRENT_SUMMARY);
 });
+// Handle POST request
+app.post('/create', createTest);
 
 
 
-// Cron Job Scheduler
-const cronJobSchedule = process.env.CRON_SCHEDULE;
+
+//////////////////////// Cron Job Scheduler /////////////////////////
+
 // Validate the cron syntax
+const cronJobSchedule = process.env.CRON_SCHEDULE;
 const validCronSyntax = CronJob.validate(cronJobSchedule);
 try {
   if (!validCronSyntax) {

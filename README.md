@@ -11,6 +11,7 @@ At the end of the testing process, a report will be generated and saved into a M
 2. Run `npm install` to install dependencies
 3. Create `.env` file at the root app folder
 ```
+CRON_SCHEDULE=*/1 * * * *
 MONGO_URI=<Database URI>
 PORT=8080
 ```

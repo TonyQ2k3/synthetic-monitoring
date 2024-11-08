@@ -38,12 +38,20 @@ app.get('/', (req, res) => {
 
 
 
-//Cron Job Scheduler - 1 min
+// Cron Job Scheduler
+const cronJobSchedule = process.env.CRON_SCHEDULE;
+// Validate the cron syntax
+const validCronSyntax = CronJob.validate(cronJobSchedule);
 try {
-  const scheduledJobFunction = CronJob.schedule('*/1 * * * *', () => {
-    runTestSuites();
-  });
-  scheduledJobFunction.start();
+  if (!validCronSyntax) {
+    console.log('[!] Invalid cron syntax! Please check the cron schedule in the .env file');
+  }
+  else {
+    const scheduledJobFunction = CronJob.schedule(cronJobSchedule, () => {
+      runTestSuites();
+    });
+    scheduledJobFunction.start();
+  }
 } catch (error) {}
 
 
@@ -71,12 +79,13 @@ function runCypress() {
     .run()
     .then((result) => {
       if (result.failures) {
-        console.error('[!] Test failed to be executed!');
+        // If the test fails, log the error message and reset CURRENT_SUMMARY
         CURRENT_SUMMARY = {};
+        console.error('[!] Test failed to be executed!');
         console.error(result.message);
-        process.exit(result.failures);
       } 
       else {
+        // If the test is successful, format the result and update CURRENT_SUMMARY
         CURRENT_SUMMARY = monitorReportStatus(result);
       }
     })

@@ -1,5 +1,4 @@
-# Stage 1: Build
-FROM cypress/base AS build
+FROM cypress/base
 
 # Set the working directory
 WORKDIR /usr/src/app
@@ -10,23 +9,14 @@ COPY package*.json ./
 # Install production dependencies
 RUN npm install
 
-# Copy the rest of the application code
-COPY . .
-
-# Stage 2: Production
-FROM cypress/base AS production
-
-# Set the working directory
-WORKDIR /usr/src/app
-
-# Copy only the necessary files from the build stage
-COPY --from=build /usr/src/app .
-
 # Prevent Cypress installer from printing crap ton of log
 ENV CI=1 
 
 # Install Cypress binaries
 RUN npx cypress install
+
+# Copy the rest of the application
+COPY . . 
 
 # Expose the port your app runs on
 EXPOSE 8080

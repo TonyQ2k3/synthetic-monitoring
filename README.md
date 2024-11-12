@@ -22,3 +22,6 @@ MONGO_URI=<Database URI>
 ## 👉 Usage
 1. To get result on the latest test, make a GET request to the root route (e.g. `http://localhost:8080`)
 2. To create a test, make a POST request to the /create route (e.g. `http://localhost:8080/create`). The body of the request should include the raw JS script for a test. Example body [here](./cypress/examples/test.example.cy.js).
+
+## 📝 Note
++ Cypress tests are written in syntaxes similar to [Chai](https://www.chaijs.com) - a popular assertion library for NodeJS

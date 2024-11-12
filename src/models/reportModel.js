@@ -3,41 +3,45 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reportSchema = new Schema({
-    totalSuites: {
-        type: Number,
+    name: {
+        type: String,
         required: true
     },
-    totalTests: {
-        type: Number,
+    fileName: {
+        type: String,
         required: true
     },
-    totalFailed: {
-        type: Number,
-        required: true
-    },
-    totalPassed: {
-        type: Number,
-        required: true
-    },
-    totalPending: {
-        type: Number,
-        required: true
-    },
-    totalSkipped: {
-        type: Number,
-        required: true
-    },
-    duration: {
-        totalDuration: {
+    stats: {
+        suites: {
             type: Number,
             required: true
         },
-        startedAt: {
+        tests: {
+            type: Number,
+            required: true
+        },
+        passes: {
+            type: Number,
+            required: true
+        },
+        pending: {
+            type: Number,
+            required: true
+        },
+        failures: {
+            type: Number,
+            required: true
+        },
+        start: {
             type: Date,
             required: true
         },
-        endedAt: {
+        end: {
             type: Date,
+            required: true
+        },
+        duration: {
+            type: Number,
             required: true
         }
     },

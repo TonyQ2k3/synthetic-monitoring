@@ -1,5 +1,6 @@
 module.exports = function monitorReportStatus(results) {
-    const tests = [];
+    let runs = []
+    let tests = [];
     let formattedResult = {};
   
     //if this is not the first run
@@ -15,6 +16,13 @@ module.exports = function monitorReportStatus(results) {
                 const testBody = test.body;
                 tests.push({ title, description, state, duration, testBody });
             });
+            runs.push({
+                name: run.spec.fileName,
+                filename: run.spec.relative,
+                stats: run.reporterStats,
+                tests
+            });
+            tests = [];
         });
   
       // Create custom test result object
@@ -30,7 +38,7 @@ module.exports = function monitorReportStatus(results) {
                 endedAt: results.endedTestsAt,
                 totalDuration: results.totalDuration,
             },
-            tests,
+            runs,
         };
     }
   

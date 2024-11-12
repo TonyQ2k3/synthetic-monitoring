@@ -68,14 +68,29 @@ async function runTestSuites() {
     runCypress();
 
     // Save the result to MongoDB
-    if (Object.keys(CURRENT_SUMMARY).length != 0) {
-      const report = new Report(CURRENT_SUMMARY);
-      report.save()
-      .catch(err => {
-        console.log('[!] Something went wrong', err);
+    if (Object.keys(CURRENT_SUMMARY.runs).length != 0) {
+      CURRENT_SUMMARY.runs.forEach((run) => {
+        saveReportToDB(run);
       });
     }
   } catch (error) {
+    console.error('[!] Something went wrong', error);
+  }
+}
+
+async function saveReportToDB(run) {
+  // const report = new Report(run);
+  try {
+    await Report.findOneAndUpdate(
+      // Filter by name
+      { name: run.name },
+      // Data to override 
+      run,
+      // Options: create a new document if it doesn't exist
+      { new: true, upsert: true } 
+    );
+  }
+  catch (error) {
     console.error('[!] Something went wrong', error);
   }
 }

@@ -14,7 +14,7 @@ The server also support generating tests via POST requests as well.
 3. Create `.env` file at the root app folder
 ```
 CRON_SCHEDULE=*/1 * * * *
-MONGO_URI=<Database URI>
+MONGO_URI=mongodb://<username>:<password>@<host>:<port>/<database>
 ```
 4. Add your test cases to [cypress/e2e/](./cypress/e2e/). Guide on how to write these tests can be found [here](https://learn.cypress.io/advanced-cypress-concepts/integration-and-api-tests).
 5. Run the app with `npm start`

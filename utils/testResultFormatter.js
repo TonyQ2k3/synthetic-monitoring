@@ -18,7 +18,7 @@ module.exports = function monitorReportStatus(results) {
             });
             runs.push({
                 name: run.spec.fileName,
-                filename: run.spec.relative,
+                fileName: run.spec.relative,
                 stats: run.reporterStats,
                 tests
             });

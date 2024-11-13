@@ -10,4 +10,4 @@ services:
       - /usr/src/app/node_modules
     environment:
       - CRON_SCHEDULE=*/1 * * * *
-      - MONGO_URI=mongodb+srv://admin:01122003@motion-cluster.9ls61.mongodb.net/
+      - MONGO_URI=<> # MongoDB URI

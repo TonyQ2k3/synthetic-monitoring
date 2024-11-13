@@ -9,12 +9,13 @@ module.exports = function monitorReportStatus(results) {
         results.runs.forEach((run) => {
             run.tests.length &&
             run.tests.forEach((test) => {
-                const title = test.title[0];
-                const description = test.title[1];
+                const type = test.title[0];
+                const zone = test.title[1];
+                const title = test.title[2];
                 const state = test.state;
                 const duration = test.duration;
                 const testBody = test.body;
-                tests.push({ title, description, state, duration, testBody });
+                tests.push({ title, type, zone, state, duration, testBody });
             });
             runs.push({
                 name: run.spec.fileName,

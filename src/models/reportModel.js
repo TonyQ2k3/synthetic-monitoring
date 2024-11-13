@@ -52,6 +52,16 @@ const reportSchema = new Schema({
                 default: 'Untitled Test',
                 required: true,
             },
+            type: {
+                type: String,
+                default: 'Untitled Test',
+                required: true,
+            },
+            zone: {
+                type: String,
+                default: 'Untitled Test',
+                required: true,
+            },
             description: {
                 type: String,
                 default: 'No description available',

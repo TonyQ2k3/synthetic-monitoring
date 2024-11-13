@@ -1,33 +1,52 @@
 {
-    "totalSuites": 3,
-    "totalTests": 3,
-    "totalFailed": 0,
-    "totalPassed": 3,
-    "totalPending": 0,
-    "totalSkipped": 0,
-    "duration": {
-        "startedAt": "2024-11-07T07:55:18.369Z",
-        "endedAt": "2024-11-07T07:55:22.174Z",
-        "totalDuration": 1540
+    "name": "ONE_DataMgt",
+    "fileName": "cypress\\e2e\\ONE\\ONE_DataMgt.cy.js",
+    "stats": {
+        "suites": 2,
+        "tests": 5,
+        "passes": 5,
+        "pending": 0,
+        "failures": 0,
+        "start": "2024-11-13T05:09:12.035Z",
+        "end": "2024-11-13T05:09:13.016Z",
+        "duration": 981
     },
     "tests": [
         {
-            "title": "POST /login",
-            "description": "Login to HSC ONE",
+            "title": "GET /contributions",
+            "type": "service",
+            "zone": "one",
             "state": "passed",
-            "duration": 864
+            "duration": 819
         },
         {
-            "title": "GET /one-profile",
-            "description": "Getting user profile",
+            "title": "GET /foreign",
+            "type": "service",
+            "zone": "one",
             "state": "passed",
-            "duration": 349
+            "duration": 30
         },
         {
-            "title": "GET /post",
-            "description": "gets a list of all jsonplaceholder posts",
+            "title": "GET /marketCap",
+            "type": "service",
+            "zone": "one",
             "state": "passed",
-            "duration": 287
+            "duration": 32
+        },
+        {
+            "title": "GET /putThrough",
+            "type": "service",
+            "zone": "one",
+            "state": "passed",
+            "duration": 29
+        },
+        {
+            "title": "GET /indexStats",
+            "type": "service",
+            "zone": "one",
+            "state": "passed",
+            "duration": 38
         }
     ]
 }
+        

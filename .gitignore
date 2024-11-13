@@ -3,3 +3,4 @@ node_modules
 cypress/e2e/hsc_**
 cypress/e2e/test_**
 cypress/environments/lotus**
+cypress/screenshots/**

@@ -62,10 +62,6 @@ const reportSchema = new Schema({
                 default: 'Untitled Test',
                 required: true,
             },
-            description: {
-                type: String,
-                default: 'No description available',
-            },
             state: {
                 type: String,
                 required: true,

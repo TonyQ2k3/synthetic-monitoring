@@ -109,6 +109,7 @@ function runCypress() {
       else {
         // If the test is successful, format the result and update CURRENT_SUMMARY
         CURRENT_SUMMARY = monitorReportStatus(result);
+        // CURRENT_SUMMARY = result;
       }
     })
     .catch((err) => {

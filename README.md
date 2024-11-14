@@ -23,5 +23,7 @@ MONGO_URI=mongodb://<username>:<password>@<host>:<port>/<database>
 1. To get result on the latest test, make a GET request to the root route (e.g. `http://localhost:8080`)
 2. To create a test, make a POST request to the /create route (e.g. `http://localhost:8080/create`). The body of the request should include the raw JS script for a test. Example body [here](./cypress/examples/test.example.cy.js).
 
-## 📝 Note
+## 📝 References
 + Cypress tests are written in syntaxes similar to [Chai](https://www.chaijs.com) - a popular assertion library for NodeJS
++ Example report JSON can be found [here](./cypress/examples/report.example.json)
++ Example raw Cypress result (pre-formatted) can be found [here](./cypress/examples/result_raw.example.json)

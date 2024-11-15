@@ -55,6 +55,7 @@ try {
   }
   else {
     const scheduledJobFunction = CronJob.schedule(cronJobSchedule, () => {
+      console.log('Cron job executed at:', new Date().toLocaleString());
       runTestSuites();
     });
     scheduledJobFunction.start();
@@ -68,7 +69,7 @@ async function runTestSuites() {
     runCypress();
 
     // Save the result to MongoDB
-    if (Object.keys(CURRENT_SUMMARY.runs).length != 0) {
+    if (CURRENT_SUMMARY.runs && Object.keys(CURRENT_SUMMARY.runs).length != 0) {
       CURRENT_SUMMARY.runs.forEach((run) => {
         saveReportToDB(run);
       });

@@ -1,7 +1,8 @@
 version: "3.8"
 services:
   synthetic-monitoring:
-    build: .
+    # build: .
+    image: tonyq2k3/synthetic-monitoring:2.3
     container_name: synthetic-monitoring-c
     ports:
       - "8080:8080"
@@ -10,4 +11,4 @@ services:
       - /usr/src/app/node_modules
     environment:
       - CRON_SCHEDULE=*/1 * * * *
-      - MONGO_URI=<> # MongoDB URI
+      - MONGO_URI=mongodb://<admin>:<password>@<host>/<db>?authSource=admin

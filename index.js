@@ -55,7 +55,7 @@ try {
   }
   else {
     const scheduledJobFunction = CronJob.schedule(cronJobSchedule, () => {
-      console.log('Cron job executed at:', new Date().toLocaleString());
+      console.log('Cron job executed at:', new Date().toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' }));
       runTestSuites();
     });
     scheduledJobFunction.start();

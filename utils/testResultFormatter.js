@@ -1,4 +1,3 @@
-const { toZonedTime, format } = require('date-fns-tz');
 
 
 module.exports = function monitorReportStatus(results) {
@@ -25,17 +24,14 @@ module.exports = function monitorReportStatus(results) {
                 tests, passes, pending, failures, start, end, duration
             } = run.reporterStats;
             // Create new date objects
-            start = new Date(start);
-            end = new Date(end);
-            // Convert to Ho Chi Minh timezone
-            start = convertUtcToHoChiMinh(start);
-            end = convertUtcToHoChiMinh(end);
+            start = new Date(start).toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' });
+            end = new Date(end).toLocaleString('en-US', { timeZone: 'Asia/Ho_Chi_Minh' });
 
             runs.push({
                 name: run.spec.fileName,
                 fileName: run.spec.relative,
                 stats: { tests, passes, pending, failures, start, end, duration },
-                reportTests
+                tests: reportTests
             });
             reportTests = [];
         });
@@ -59,13 +55,3 @@ module.exports = function monitorReportStatus(results) {
   
     return formattedResult;
 };
-
-function convertUtcToHoChiMinh(utcTimestamp) {
-    // Define the timezone for Ho Chi Minh City
-    const hoChiMinhTimezone = 'Asia/Saigon';
-  
-    // Convert the UTC timestamp to Ho Chi Minh timezone
-    const formattedDate = format(utcTimestamp, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: hoChiMinhTimezone });
-  
-    return formattedDate;
-}

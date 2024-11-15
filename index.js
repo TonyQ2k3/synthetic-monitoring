@@ -81,6 +81,7 @@ async function runTestSuites() {
 async function saveReportToDB(run) {
   // const report = new Report(run);
   try {
+    const startTime = new Date();
     await Report.findOneAndUpdate(
       // Filter by name
       { name: run.name },
@@ -89,6 +90,8 @@ async function saveReportToDB(run) {
       // Options: create a new document if it doesn't exist
       { new: true, upsert: true } 
     );
+    const endTime = new Date();
+    console.log(`[+] Report for ${run.name} has been saved to the database in ${endTime - startTime}ms`);
   }
   catch (error) {
     console.error('[!] Something went wrong', error);

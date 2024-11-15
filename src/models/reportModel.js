@@ -12,10 +12,6 @@ const reportSchema = new Schema({
         required: true
     },
     stats: {
-        suites: {
-            type: Number,
-            required: true
-        },
         tests: {
             type: Number,
             required: true
@@ -33,11 +29,11 @@ const reportSchema = new Schema({
             required: true
         },
         start: {
-            type: Date,
+            type: String,
             required: true
         },
         end: {
-            type: Date,
+            type: String,
             required: true
         },
         duration: {

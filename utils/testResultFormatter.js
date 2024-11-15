@@ -1,6 +1,9 @@
+const { toZonedTime, format } = require('date-fns-tz');
+
+
 module.exports = function monitorReportStatus(results) {
     let runs = []
-    let tests = [];
+    let reportTests = [];
     let formattedResult = {};
   
     //if this is not the first run
@@ -15,15 +18,26 @@ module.exports = function monitorReportStatus(results) {
                 const state = test.state;
                 const duration = test.duration;
                 const testBody = test.body;
-                tests.push({ title, type, zone, state, duration, testBody });
+                reportTests.push({ title, type, zone, state, duration, testBody });
             });
+            // Destructure stats object
+            let {
+                tests, passes, pending, failures, start, end, duration
+            } = run.reporterStats;
+            // Create new date objects
+            start = new Date(start);
+            end = new Date(end);
+            // Convert to Ho Chi Minh timezone
+            start = convertUtcToHoChiMinh(start);
+            end = convertUtcToHoChiMinh(end);
+
             runs.push({
                 name: run.spec.fileName,
                 fileName: run.spec.relative,
-                stats: run.reporterStats,
-                tests
+                stats: { tests, passes, pending, failures, start, end, duration },
+                reportTests
             });
-            tests = [];
+            reportTests = [];
         });
   
       // Create custom test result object
@@ -45,3 +59,13 @@ module.exports = function monitorReportStatus(results) {
   
     return formattedResult;
 };
+
+function convertUtcToHoChiMinh(utcTimestamp) {
+    // Define the timezone for Ho Chi Minh City
+    const hoChiMinhTimezone = 'Asia/Saigon';
+  
+    // Convert the UTC timestamp to Ho Chi Minh timezone
+    const formattedDate = format(utcTimestamp, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: hoChiMinhTimezone });
+  
+    return formattedDate;
+}

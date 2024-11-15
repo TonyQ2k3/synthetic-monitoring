@@ -9,9 +9,6 @@ COPY package*.json ./
 # Install production dependencies
 RUN npm install
 
-# Prevent Cypress installer from printing crap ton of log
-ENV CI=1 
-
 # Install Cypress binaries
 RUN npx cypress install
 

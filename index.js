@@ -65,15 +65,9 @@ try {
 
 async function runTestSuites() {
   try {
-    // Run the cypressTest
+    // Run the cypressTest, and save to DB
     runCypress();
 
-    // Save the result to MongoDB
-    if (CURRENT_SUMMARY.runs && Object.keys(CURRENT_SUMMARY.runs).length != 0) {
-      CURRENT_SUMMARY.runs.forEach((run) => {
-        saveReportToDB(run);
-      });
-    }
   } catch (error) {
     console.error('[!] Something went wrong', error);
   }
@@ -114,6 +108,14 @@ function runCypress() {
         // If the test is successful, format the result and update CURRENT_SUMMARY
         CURRENT_SUMMARY = monitorReportStatus(result);
         // CURRENT_SUMMARY = result;
+        
+        // Save the result to MongoDB
+        console.log("Saving data to MongoDB...");
+        if (CURRENT_SUMMARY.runs && Object.keys(CURRENT_SUMMARY.runs).length != 0) {
+          CURRENT_SUMMARY.runs.forEach((run) => {
+            saveReportToDB(run);
+          });
+        }
       }
     })
     .catch((err) => {

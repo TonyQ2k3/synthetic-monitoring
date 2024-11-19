@@ -66,6 +66,11 @@ const reportSchema = new Schema({
             duration: {
                 type: Number,
                 required: true
+            },
+            testError: {
+                type: String,
+                default: "",
+                required: true
             }
         }
     ]

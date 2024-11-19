@@ -17,7 +17,8 @@ module.exports = function monitorReportStatus(results) {
                 const state = test.state;
                 const duration = test.duration;
                 const testBody = test.body;
-                reportTests.push({ title, type, zone, state, duration, testBody });
+                const testError = test.displayError;
+                reportTests.push({ title, type, zone, state, duration, testBody, testError });
             });
             // Destructure stats object
             let {

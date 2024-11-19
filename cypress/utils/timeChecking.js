@@ -42,10 +42,13 @@ function isTradingTime() {
 
     // Define the range in total minutes
     const eightAM = 8 * 60; // 8:00 AM in minutes
-    const threePM = 14 * 45; // 3:00 PM in minutes
+    const threePM = 14 * 60 + 45; // 2:45 PM in minutes
 
-    // Check if the time is between 8 AM and 3 PM
+    // Check if the time is between 8 AM and 2:45 PM
+    console.log(totalMinutes);
     return totalMinutes >= eightAM && totalMinutes < threePM;
 }
 
 module.exports = { isWorkingDay, isTradingTime };
+
+console.log(isTradingTime());

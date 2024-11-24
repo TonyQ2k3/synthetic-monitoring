@@ -3,6 +3,8 @@
     "browserPath": "",
     "browserVersion": "118.0.5993.159",
     "config": {
+        "video": false,
+        "screenshotOnRunFailure": false,
         "projectRoot": "D:\\Projects\\Javascript\\synthetic-test",
         "projectName": "synthetic-test",
         "configFile": "cypress.config.js",
@@ -39,7 +41,7 @@
         "numTestsKeptInMemory": 0,
         "platform": "win32",
         "pageLoadTimeout": 60000,
-        "port": 49912,
+        "port": 54817,
         "projectId": null,
         "redirectionLimit": 20,
         "reporter": "spec",
@@ -52,7 +54,6 @@
             "runMode": 0,
             "openMode": 0
         },
-        "screenshotOnRunFailure": true,
         "screenshotsFolder": "D:\\Projects\\Javascript\\synthetic-test\\cypress\\screenshots",
         "slowTestThreshold": 10000,
         "scrollBehavior": "top",
@@ -61,7 +62,6 @@
         "testIsolation": true,
         "trashAssetsBeforeRuns": true,
         "userAgent": null,
-        "video": false,
         "videoCompression": false,
         "videosFolder": "D:\\Projects\\Javascript\\synthetic-test\\cypress\\videos",
         "viewportHeight": 660,
@@ -74,10 +74,10 @@
                 "channel": "stable",
                 "displayName": "Edge",
                 "family": "chromium",
-                "majorVersion": "130",
+                "majorVersion": "131",
                 "name": "edge",
                 "path": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
-                "version": "130.0.2849.80"
+                "version": "131.0.2903.51"
             },
             {
                 "channel": "stable",
@@ -98,10 +98,60 @@
         "cypressInternalEnv": "production"
     },
     "cypressVersion": "13.15.2",
-    "endedTestsAt": "2024-11-13T05:02:29.915Z",
+    "endedTestsAt": "2024-11-19T10:28:53.373Z",
     "osName": "win32",
     "osVersion": "10.0.19045",
     "runs": [
+        {
+            "error": null,
+            "reporter": "spec",
+            "reporterStats": {
+                "suites": 1,
+                "tests": 1,
+                "passes": 1,
+                "pending": 0,
+                "failures": 0,
+                "start": "2024-11-19T10:28:19.020Z",
+                "end": "2024-11-19T10:28:19.387Z",
+                "duration": 367
+            },
+            "screenshots": [],
+            "spec": {
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/test.example.cy.js",
+                "fileExtension": ".js",
+                "fileName": "test.example",
+                "name": "test.example.cy.js",
+                "relative": "cypress\\e2e\\test.example.cy.js"
+            },
+            "stats": {
+                "duration": 372,
+                "endedAt": "2024-11-19T10:28:19.382Z",
+                "failures": 0,
+                "passes": 1,
+                "pending": 0,
+                "skipped": 0,
+                "startedAt": "2024-11-19T10:28:19.010Z",
+                "suites": 1,
+                "tests": 1
+            },
+            "tests": [
+                {
+                    "attempts": [
+                        {
+                            "state": "passed"
+                        }
+                    ],
+                    "displayError": null,
+                    "duration": 352,
+                    "state": "passed",
+                    "title": [
+                        "GET /post",
+                        "gets a list of all jsonplaceholder posts"
+                    ]
+                }
+            ],
+            "video": null
+        },
         {
             "error": null,
             "reporter": "spec",
@@ -111,26 +161,26 @@
                 "passes": 5,
                 "pending": 0,
                 "failures": 0,
-                "start": "2024-11-13T05:02:11.791Z",
-                "end": "2024-11-13T05:02:12.625Z",
-                "duration": 834
+                "start": "2024-11-19T10:28:21.682Z",
+                "end": "2024-11-19T10:28:24.364Z",
+                "duration": 2682
             },
             "screenshots": [],
             "spec": {
-                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/ONE_DataMgt.cy.js",
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/IBS/IBS-Backend.cy.js",
                 "fileExtension": ".js",
-                "fileName": "ONE_DataMgt",
-                "name": "ONE_DataMgt.cy.js",
-                "relative": "cypress\\e2e\\ONE\\ONE_DataMgt.cy.js"
+                "fileName": "IBS-Backend",
+                "name": "IBS-Backend.cy.js",
+                "relative": "cypress\\e2e\\IBS\\IBS-Backend.cy.js"
             },
             "stats": {
-                "duration": 837,
-                "endedAt": "2024-11-13T05:02:12.619Z",
+                "duration": 2683,
+                "endedAt": "2024-11-19T10:28:24.356Z",
                 "failures": 0,
                 "passes": 5,
                 "pending": 0,
                 "skipped": 0,
-                "startedAt": "2024-11-13T05:02:11.782Z",
+                "startedAt": "2024-11-19T10:28:21.673Z",
                 "suites": 2,
                 "tests": 5
             },
@@ -142,7 +192,169 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 665,
+                    "duration": 1228,
+                    "state": "passed",
+                    "title": [
+                        "service",
+                        "ibs",
+                        "one-profile"
+                    ]
+                },
+                {
+                    "attempts": [
+                        {
+                            "state": "passed"
+                        }
+                    ],
+                    "displayError": null,
+                    "duration": 304,
+                    "state": "passed",
+                    "title": [
+                        "service",
+                        "ibs",
+                        "account-permissions"
+                    ]
+                },
+                {
+                    "attempts": [
+                        {
+                            "state": "passed"
+                        }
+                    ],
+                    "displayError": null,
+                    "duration": 524,
+                    "state": "passed",
+                    "title": [
+                        "service",
+                        "ibs",
+                        "settings-view"
+                    ]
+                },
+                {
+                    "attempts": [
+                        {
+                            "state": "passed"
+                        }
+                    ],
+                    "displayError": null,
+                    "duration": 304,
+                    "state": "passed",
+                    "title": [
+                        "service",
+                        "ibs",
+                        "configuration"
+                    ]
+                },
+                {
+                    "attempts": [
+                        {
+                            "state": "passed"
+                        }
+                    ],
+                    "displayError": null,
+                    "duration": 269,
+                    "state": "passed",
+                    "title": [
+                        "service",
+                        "ibs",
+                        "data-core"
+                    ]
+                }
+            ],
+            "video": null
+        },
+        {
+            "error": null,
+            "reporter": "spec",
+            "reporterStats": {
+                "suites": 2,
+                "tests": 1,
+                "passes": 1,
+                "pending": 0,
+                "failures": 0,
+                "start": "2024-11-19T10:28:26.602Z",
+                "end": "2024-11-19T10:28:27.306Z",
+                "duration": 704
+            },
+            "screenshots": [],
+            "spec": {
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/IBS/Utilities.cy.js",
+                "fileExtension": ".js",
+                "fileName": "Utilities",
+                "name": "Utilities.cy.js",
+                "relative": "cypress\\e2e\\IBS\\Utilities.cy.js"
+            },
+            "stats": {
+                "duration": 707,
+                "endedAt": "2024-11-19T10:28:27.302Z",
+                "failures": 0,
+                "passes": 1,
+                "pending": 0,
+                "skipped": 0,
+                "startedAt": "2024-11-19T10:28:26.595Z",
+                "suites": 2,
+                "tests": 1
+            },
+            "tests": [
+                {
+                    "attempts": [
+                        {
+                            "state": "passed"
+                        }
+                    ],
+                    "displayError": null,
+                    "duration": 697,
+                    "state": "passed",
+                    "title": [
+                        "service",
+                        "ibs",
+                        "notification"
+                    ]
+                }
+            ],
+            "video": null
+        },
+        {
+            "error": null,
+            "reporter": "spec",
+            "reporterStats": {
+                "suites": 2,
+                "tests": 5,
+                "passes": 5,
+                "pending": 0,
+                "failures": 0,
+                "start": "2024-11-19T10:28:29.612Z",
+                "end": "2024-11-19T10:28:30.259Z",
+                "duration": 647
+            },
+            "screenshots": [],
+            "spec": {
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/Data-Mgt.cy.js",
+                "fileExtension": ".js",
+                "fileName": "Data-Mgt",
+                "name": "Data-Mgt.cy.js",
+                "relative": "cypress\\e2e\\ONE\\Data-Mgt.cy.js"
+            },
+            "stats": {
+                "duration": 650,
+                "endedAt": "2024-11-19T10:28:30.255Z",
+                "failures": 0,
+                "passes": 5,
+                "pending": 0,
+                "skipped": 0,
+                "startedAt": "2024-11-19T10:28:29.605Z",
+                "suites": 2,
+                "tests": 5
+            },
+            "tests": [
+                {
+                    "attempts": [
+                        {
+                            "state": "passed"
+                        }
+                    ],
+                    "displayError": null,
+                    "duration": 471,
                     "state": "passed",
                     "title": [
                         "service",
@@ -157,7 +369,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 36,
+                    "duration": 29,
                     "state": "passed",
                     "title": [
                         "service",
@@ -172,7 +384,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 30,
+                    "duration": 29,
                     "state": "passed",
                     "title": [
                         "service",
@@ -187,7 +399,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 28,
+                    "duration": 33,
                     "state": "passed",
                     "title": [
                         "service",
@@ -218,32 +430,32 @@
             "reporter": "spec",
             "reporterStats": {
                 "suites": 2,
-                "tests": 13,
-                "passes": 13,
+                "tests": 9,
+                "passes": 9,
                 "pending": 0,
                 "failures": 0,
-                "start": "2024-11-13T05:02:14.826Z",
-                "end": "2024-11-13T05:02:15.673Z",
-                "duration": 847
+                "start": "2024-11-19T10:28:32.791Z",
+                "end": "2024-11-19T10:28:39.017Z",
+                "duration": 6226
             },
             "screenshots": [],
             "spec": {
-                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/ONE_OrderEquity.cy.js",
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/Equity-Order.cy.js",
                 "fileExtension": ".js",
-                "fileName": "ONE_OrderEquity",
-                "name": "ONE_OrderEquity.cy.js",
-                "relative": "cypress\\e2e\\ONE\\ONE_OrderEquity.cy.js"
+                "fileName": "Equity-Order",
+                "name": "Equity-Order.cy.js",
+                "relative": "cypress\\e2e\\ONE\\Equity-Order.cy.js"
             },
             "stats": {
-                "duration": 850,
-                "endedAt": "2024-11-13T05:02:15.668Z",
+                "duration": 6226,
+                "endedAt": "2024-11-19T10:28:39.010Z",
                 "failures": 0,
-                "passes": 13,
+                "passes": 9,
                 "pending": 0,
                 "skipped": 0,
-                "startedAt": "2024-11-13T05:02:14.818Z",
+                "startedAt": "2024-11-19T10:28:32.784Z",
                 "suites": 2,
-                "tests": 13
+                "tests": 9
             },
             "tests": [
                 {
@@ -253,7 +465,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 434,
+                    "duration": 3188,
                     "state": "passed",
                     "title": [
                         "service",
@@ -268,7 +480,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 29,
+                    "duration": 394,
                     "state": "passed",
                     "title": [
                         "service",
@@ -283,7 +495,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 27,
+                    "duration": 344,
                     "state": "passed",
                     "title": [
                         "service",
@@ -298,7 +510,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 28,
+                    "duration": 395,
                     "state": "passed",
                     "title": [
                         "service",
@@ -313,7 +525,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 31,
+                    "duration": 233,
                     "state": "passed",
                     "title": [
                         "service",
@@ -328,7 +540,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 29,
+                    "duration": 209,
                     "state": "passed",
                     "title": [
                         "service",
@@ -343,22 +555,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 24,
-                    "state": "passed",
-                    "title": [
-                        "service",
-                        "one",
-                        "POST /getOtp"
-                    ]
-                },
-                {
-                    "attempts": [
-                        {
-                            "state": "passed"
-                        }
-                    ],
-                    "displayError": null,
-                    "duration": 23,
+                    "duration": 747,
                     "state": "passed",
                     "title": [
                         "service",
@@ -373,7 +570,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 24,
+                    "duration": 353,
                     "state": "passed",
                     "title": [
                         "service",
@@ -388,57 +585,12 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 30,
+                    "duration": 280,
                     "state": "passed",
                     "title": [
                         "service",
                         "one",
                         "POST /verifyRiskRules"
-                    ]
-                },
-                {
-                    "attempts": [
-                        {
-                            "state": "passed"
-                        }
-                    ],
-                    "displayError": null,
-                    "duration": 24,
-                    "state": "passed",
-                    "title": [
-                        "service",
-                        "one",
-                        "POST /getOtp again"
-                    ]
-                },
-                {
-                    "attempts": [
-                        {
-                            "state": "passed"
-                        }
-                    ],
-                    "displayError": null,
-                    "duration": 27,
-                    "state": "passed",
-                    "title": [
-                        "service",
-                        "one",
-                        "POST /cancelOrder"
-                    ]
-                },
-                {
-                    "attempts": [
-                        {
-                            "state": "passed"
-                        }
-                    ],
-                    "displayError": null,
-                    "duration": 41,
-                    "state": "passed",
-                    "title": [
-                        "service",
-                        "one",
-                        "GET /one-profile"
                     ]
                 }
             ],
@@ -453,34 +605,26 @@
                 "passes": 4,
                 "pending": 0,
                 "failures": 1,
-                "start": "2024-11-13T05:02:17.856Z",
-                "end": "2024-11-13T05:02:20.910Z",
-                "duration": 3054
+                "start": "2024-11-19T10:28:42.043Z",
+                "end": "2024-11-19T10:28:43.734Z",
+                "duration": 1691
             },
-            "screenshots": [
-                {
-                    "height": 720,
-                    "name": null,
-                    "path": "D:\\Projects\\Javascript\\synthetic-test\\cypress\\screenshots\\ONE_OrderFuture.cy.js\\service -- one -- derivative_account (failed).png",
-                    "takenAt": "2024-11-13T05:02:19.048Z",
-                    "width": 1280
-                }
-            ],
+            "screenshots": [],
             "spec": {
-                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/ONE_OrderFuture.cy.js",
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/Futures-Order.cy.js",
                 "fileExtension": ".js",
-                "fileName": "ONE_OrderFuture",
-                "name": "ONE_OrderFuture.cy.js",
-                "relative": "cypress\\e2e\\ONE\\ONE_OrderFuture.cy.js"
+                "fileName": "Futures-Order",
+                "name": "Futures-Order.cy.js",
+                "relative": "cypress\\e2e\\ONE\\Futures-Order.cy.js"
             },
             "stats": {
-                "duration": 3062,
-                "endedAt": "2024-11-13T05:02:20.905Z",
+                "duration": 1693,
+                "endedAt": "2024-11-19T10:28:43.728Z",
                 "failures": 1,
                 "passes": 4,
                 "pending": 0,
                 "skipped": 0,
-                "startedAt": "2024-11-13T05:02:17.843Z",
+                "startedAt": "2024-11-19T10:28:42.035Z",
                 "suites": 2,
                 "tests": 5
             },
@@ -492,7 +636,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 947,
+                    "duration": 525,
                     "state": "passed",
                     "title": [
                         "service",
@@ -506,8 +650,8 @@
                             "state": "failed"
                         }
                     ],
-                    "displayError": "CypressError: `cy.request()` failed on:\n\nhttps://lotus-api.hsc.com.vn/hsc-order-mgmt/derivatives/v1/account\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://lotus-api.hsc.com.vn/hsc-order-mgmt/derivatives/v1/account\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXZW1Hd0ZEVGtKa2xsZzFOcUlwUmJlM01rOTRqMzRwVnFEbEFRdnp5dk5RIn0.eyJleHAiOjE3MzE0ODQ5MzcsImlhdCI6MTczMTQ3NDEzNywianRpIjoiZjRhMmRkNGUtOGM2MS00NGUxLWJlNDQtMjA5YWIwOWM2MmQ4IiwiaXNzIjoiaHR0cDovLzEwLjY0LjEuNzEvcmVhbG1zL2hzYy1vbmxpbmUtdHJhZGluZyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlMjRmNDRhYS1hMGYyLTQwODUtOGY5OC01NGQwOWY2YWY4YmQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJoc2MtYWNjb3VudC1hcGkiLCJzZXNzaW9uX3N0YXRlIjoiYjA3YTU5NjYtMjEyYi00ZWFkLWFiYjMtMDZhOWVjOTMxYTEyIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJkZWZhdWx0LXJvbGVzLWhzYy1jdXN0b21lciIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIG9wZW5pZCIsInNpZCI6ImIwN2E1OTY2LTIxMmItNGVhZC1hYmIzLTA2YTllYzkzMWExMiIsInVwbiI6IjAxMWM5OTk3NzkiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImFkZHJlc3MiOnt9LCJuYW1lIjoiVFLhu4pOSCBQSMavxqBORyBUw4JNIiwiZ3JvdXBzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1oc2MtY3VzdG9tZXIiLCJ1bWFfYXV0aG9yaXphdGlvbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIwMTFjOTk5Nzc5IiwiZ2l2ZW5fbmFtZSI6IlRS4buKTkggUEjGr8agTkcgVMOCTSJ9.Yiv0Jg1iSCdPETX5D464ggwAbAQ3gdtry2KX6iexPcSWk0bqSpgrLvxCn4Zep1Ixhyq_Q1_dghTQ1QMf2BiU8oCasIvH3StakXHHLk2PQv9UHlwDLzkhadJ8QkgozEfZOmGsUgkfpYKyoumZytJNSSUTwskt4Ig9Hr1jwvvooWnP0gIMIQc1CgJIoWgAvCPRbGQu1Wzi-h0odDecOKHITnJbRUCWBIy4786vSZOdB2YDXi0dMvKyicYA7joURgS-FkCc-HgM5jh5PU1XZD8k_jLyegKYOngazBXC6V2GFLoqbHxFpQIQ-OliiDqQDhBvTO363dhY1uRItxDlcoVKzw\",\n  \"Referer\": \"https://one.hsc.com.vn/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\",\n  \"sec-ch-ua\": \"\\\"Chromium\\\";v=\\\"124\\\", \\\"Google Chrome\\\";v=\\\"124\\\", \\\"Not-A.Brand\\\";v=\\\"99\\\"\",\n  \"sec-ch-ua-mobile\": \"?0\",\n  \"sec-ch-ua-platform\": \"\\\"Windows\\\"\",\n  \"accept\": \"application/json, text/plain, */*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Wed, 13 Nov 2024 05:02:19 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"109\",\n  \"content-security-policy\": \"default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests\",\n  \"cross-origin-embedder-policy\": \"require-corp\",\n  \"cross-origin-opener-policy\": \"same-origin\",\n  \"cross-origin-resource-policy\": \"same-origin\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"expect-ct\": \"max-age=0\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"origin-agent-cluster\": \"?1\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"referrer-policy\": \"no-referrer\",\n  \"x-xss-protection\": \"0\",\n  \"etag\": \"W/\\\"6d-jpYs0B8TDHdljDXanOqBzaGTgEQ\\\"\",\n  \"vary\": \"Accept-Encoding, Origin\",\n  \"x-kong-upstream-latency\": \"11\",\n  \"x-kong-proxy-latency\": \"9\",\n  \"via\": \"kong/2.6.0, mly inter\",\n  \"timing-allow-origin\": \"*\",\n  \"x-mly-id\": \"535571be6dec54d3c2088ee2fa938354\",\n  \"cache-control\": \"private\",\n  \"x-cache\": \"MISS from da005.vn13.swiftserve.com:443\"\n}\nBody: {\n  \"statusCode\": 500,\n  \"error\": {\n    \"message\": \"Request failed with status code 400\",\n    \"errorCode\": \"TBEFE_UNKNOWN-0000\"\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:49912/__cypress/runner/cypress_runner.js:132719:72)\n    at tryCatcher (http://localhost:49912/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:49912/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:49912/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:49912/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:49912/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:49912/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:49912/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:49912/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:49912/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://synthetic-test/./cypress/e2e/ONE/ONE_OrderFuture.cy.js:71:15)",
-                    "duration": 848,
+                    "displayError": "CypressError: `cy.request()` failed on:\n\nhttps://lotus-api.hsc.com.vn/hsc-order-mgmt/derivatives/v1/account\n\nThe response we received from your web server was:\n\n  > 500: Internal Server Error\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://lotus-api.hsc.com.vn/hsc-order-mgmt/derivatives/v1/account\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"Authorization\": \"Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJXZW1Hd0ZEVGtKa2xsZzFOcUlwUmJlM01rOTRqMzRwVnFEbEFRdnp5dk5RIn0.eyJleHAiOjE3MzIwMjI5MjAsImlhdCI6MTczMjAxMjEyMCwianRpIjoiOWRmOWZhZmItMmNmOC00ZTZiLWE3MzAtYjMyMzU1YzVjNGEzIiwiaXNzIjoiaHR0cDovLzEwLjY0LjEuNzEvcmVhbG1zL2hzYy1vbmxpbmUtdHJhZGluZyIsImF1ZCI6ImFjY291bnQiLCJzdWIiOiJlMjRmNDRhYS1hMGYyLTQwODUtOGY5OC01NGQwOWY2YWY4YmQiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJoc2MtYWNjb3VudC1hcGkiLCJzZXNzaW9uX3N0YXRlIjoiMzAxNjg3YTMtZmVmMS00ZGU2LTk4ZjItODcwMGU1ZWFhNjcwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsib2ZmbGluZV9hY2Nlc3MiLCJkZWZhdWx0LXJvbGVzLWhzYy1jdXN0b21lciIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIG9wZW5pZCIsInNpZCI6IjMwMTY4N2EzLWZlZjEtNGRlNi05OGYyLTg3MDBlNWVhYTY3MCIsInVwbiI6IjAxMWM5OTk3NzkiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImFkZHJlc3MiOnt9LCJuYW1lIjoiVFLhu4pOSCBQSMavxqBORyBUw4JNIiwiZ3JvdXBzIjpbIm9mZmxpbmVfYWNjZXNzIiwiZGVmYXVsdC1yb2xlcy1oc2MtY3VzdG9tZXIiLCJ1bWFfYXV0aG9yaXphdGlvbiJdLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiIwMTFjOTk5Nzc5IiwiZ2l2ZW5fbmFtZSI6IlRS4buKTkggUEjGr8agTkcgVMOCTSJ9.SMz8X9anu36bbj8qfksRCDeT_5_pTifCkaqzyrGyLQdi3x8i9vCIFF3E8YUKc12mfJmCCKMZhGKjaC203GF_8lKU3YdDnABQZhux9zEl2JddZImmNgNKY86HyUBV6xVcIGxDaLkaB-blBliRA3sWaorUZmqqP6-3StlsK8nMY0hCIoxUaC_cJmITIp533eqle3uUUXErKdrbm5qdV56ubbLFcgcyHcJDNQUKUM2-hx0qeGvHooHOCXftKyWfGMyhBnhagNKB124tD_DrrbjjTqZinOt7AKkvQkl3pYtffdPcHhrR438uD7TSYe2Uz_l8OWSo1OAZNjaXQq96uiwM7g\",\n  \"Referer\": \"https://one.hsc.com.vn/\",\n  \"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36\",\n  \"sec-ch-ua\": \"\\\"Chromium\\\";v=\\\"124\\\", \\\"Google Chrome\\\";v=\\\"124\\\", \\\"Not-A.Brand\\\";v=\\\"99\\\"\",\n  \"sec-ch-ua-mobile\": \"?0\",\n  \"sec-ch-ua-platform\": \"\\\"Windows\\\"\",\n  \"accept\": \"application/json, text/plain, */*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 500 - Internal Server Error\nHeaders: {\n  \"server\": \"nginx\",\n  \"date\": \"Tue, 19 Nov 2024 10:28:42 GMT\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"content-length\": \"109\",\n  \"content-security-policy\": \"default-src 'self';base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests\",\n  \"cross-origin-embedder-policy\": \"require-corp\",\n  \"cross-origin-opener-policy\": \"same-origin\",\n  \"cross-origin-resource-policy\": \"same-origin\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"expect-ct\": \"max-age=0\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"origin-agent-cluster\": \"?1\",\n  \"x-permitted-cross-domain-policies\": \"none\",\n  \"referrer-policy\": \"no-referrer\",\n  \"x-xss-protection\": \"0\",\n  \"etag\": \"W/\\\"6d-jpYs0B8TDHdljDXanOqBzaGTgEQ\\\"\",\n  \"vary\": \"Accept-Encoding, Origin\",\n  \"x-kong-upstream-latency\": \"12\",\n  \"x-kong-proxy-latency\": \"11\",\n  \"via\": \"kong/2.6.0, mly inter\",\n  \"timing-allow-origin\": \"*\",\n  \"x-mly-id\": \"97410b5769dc84505ed697b128dcc027\",\n  \"cache-control\": \"private\",\n  \"x-cache\": \"MISS from da005.vn04.swiftserve.com:443\"\n}\nBody: {\n  \"statusCode\": 500,\n  \"error\": {\n    \"message\": \"Request failed with status code 400\",\n    \"errorCode\": \"TBEFE_UNKNOWN-0000\"\n  }\n}\n\n\nhttps://on.cypress.io/request\n    at <unknown> (http://localhost:54817/__cypress/runner/cypress_runner.js:132719:72)\n    at tryCatcher (http://localhost:54817/__cypress/runner/cypress_runner.js:1807:23)\n    at Promise._settlePromiseFromHandler (http://localhost:54817/__cypress/runner/cypress_runner.js:1519:31)\n    at Promise._settlePromise (http://localhost:54817/__cypress/runner/cypress_runner.js:1576:18)\n    at Promise._settlePromise0 (http://localhost:54817/__cypress/runner/cypress_runner.js:1621:10)\n    at Promise._settlePromises (http://localhost:54817/__cypress/runner/cypress_runner.js:1701:18)\n    at _drainQueueStep (http://localhost:54817/__cypress/runner/cypress_runner.js:2407:12)\n    at _drainQueue (http://localhost:54817/__cypress/runner/cypress_runner.js:2400:9)\n    at Async._drainQueues (http://localhost:54817/__cypress/runner/cypress_runner.js:2416:5)\n    at Async.drainQueues (http://localhost:54817/__cypress/runner/cypress_runner.js:2286:14)\nFrom Your Spec Code:\n    at Context.eval (webpack://synthetic-test/./cypress/e2e/ONE/Futures-Order.cy.js:74:15)",
+                    "duration": 255,
                     "state": "failed",
                     "title": [
                         "service",
@@ -522,7 +666,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 500,
+                    "duration": 267,
                     "state": "passed",
                     "title": [
                         "service",
@@ -537,7 +681,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 308,
+                    "duration": 209,
                     "state": "passed",
                     "title": [
                         "service",
@@ -552,7 +696,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 312,
+                    "duration": 233,
                     "state": "passed",
                     "title": [
                         "service",
@@ -572,26 +716,26 @@
                 "passes": 0,
                 "pending": 0,
                 "failures": 0,
-                "start": "2024-11-13T05:02:22.982Z",
-                "end": "2024-11-13T05:02:22.983Z",
-                "duration": 1
+                "start": "2024-11-19T10:28:46.589Z",
+                "end": "2024-11-19T10:28:46.589Z",
+                "duration": 0
             },
             "screenshots": [],
             "spec": {
-                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/ONE_OrderUpdate.cy.js",
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/Order-Update.cy.js",
                 "fileExtension": ".js",
-                "fileName": "ONE_OrderUpdate",
-                "name": "ONE_OrderUpdate.cy.js",
-                "relative": "cypress\\e2e\\ONE\\ONE_OrderUpdate.cy.js"
+                "fileName": "Order-Update",
+                "name": "Order-Update.cy.js",
+                "relative": "cypress\\e2e\\ONE\\Order-Update.cy.js"
             },
             "stats": {
                 "duration": 1,
-                "endedAt": "2024-11-13T05:02:22.979Z",
+                "endedAt": "2024-11-19T10:28:46.588Z",
                 "failures": 0,
                 "passes": 0,
                 "pending": 0,
                 "skipped": 0,
-                "startedAt": "2024-11-13T05:02:22.978Z",
+                "startedAt": "2024-11-19T10:28:46.587Z",
                 "suites": 1,
                 "tests": 0
             },
@@ -607,26 +751,26 @@
                 "passes": 1,
                 "pending": 0,
                 "failures": 0,
-                "start": "2024-11-13T05:02:26.242Z",
-                "end": "2024-11-13T05:02:26.801Z",
-                "duration": 559
+                "start": "2024-11-19T10:28:49.835Z",
+                "end": "2024-11-19T10:28:50.228Z",
+                "duration": 393
             },
             "screenshots": [],
             "spec": {
-                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/ONE_Parameter.cy.js",
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/Parameter.cy.js",
                 "fileExtension": ".js",
-                "fileName": "ONE_Parameter",
-                "name": "ONE_Parameter.cy.js",
-                "relative": "cypress\\e2e\\ONE\\ONE_Parameter.cy.js"
+                "fileName": "Parameter",
+                "name": "Parameter.cy.js",
+                "relative": "cypress\\e2e\\ONE\\Parameter.cy.js"
             },
             "stats": {
-                "duration": 570,
-                "endedAt": "2024-11-13T05:02:26.793Z",
+                "duration": 395,
+                "endedAt": "2024-11-19T10:28:50.221Z",
                 "failures": 0,
                 "passes": 1,
                 "pending": 0,
                 "skipped": 0,
-                "startedAt": "2024-11-13T05:02:26.223Z",
+                "startedAt": "2024-11-19T10:28:49.826Z",
                 "suites": 2,
                 "tests": 1
             },
@@ -638,7 +782,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 546,
+                    "duration": 381,
                     "state": "passed",
                     "title": [
                         "service",
@@ -658,26 +802,26 @@
                 "passes": 3,
                 "pending": 0,
                 "failures": 0,
-                "start": "2024-11-13T05:02:29.383Z",
-                "end": "2024-11-13T05:02:29.921Z",
-                "duration": 538
+                "start": "2024-11-19T10:28:52.891Z",
+                "end": "2024-11-19T10:28:53.378Z",
+                "duration": 487
             },
             "screenshots": [],
             "spec": {
-                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/ONE_Watchlist.cy.js",
+                "absolute": "D:/Projects/Javascript/synthetic-test/cypress/e2e/ONE/Watchlist.cy.js",
                 "fileExtension": ".js",
-                "fileName": "ONE_Watchlist",
-                "name": "ONE_Watchlist.cy.js",
-                "relative": "cypress\\e2e\\ONE\\ONE_Watchlist.cy.js"
+                "fileName": "Watchlist",
+                "name": "Watchlist.cy.js",
+                "relative": "cypress\\e2e\\ONE\\Watchlist.cy.js"
             },
             "stats": {
-                "duration": 539,
-                "endedAt": "2024-11-13T05:02:29.915Z",
+                "duration": 489,
+                "endedAt": "2024-11-19T10:28:53.373Z",
                 "failures": 0,
                 "passes": 3,
                 "pending": 0,
                 "skipped": 0,
-                "startedAt": "2024-11-13T05:02:29.376Z",
+                "startedAt": "2024-11-19T10:28:52.884Z",
                 "suites": 2,
                 "tests": 3
             },
@@ -689,7 +833,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 447,
+                    "duration": 374,
                     "state": "passed",
                     "title": [
                         "service",
@@ -704,7 +848,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 24,
+                    "duration": 37,
                     "state": "passed",
                     "title": [
                         "service",
@@ -719,7 +863,7 @@
                         }
                     ],
                     "displayError": null,
-                    "duration": 35,
+                    "duration": 36,
                     "state": "passed",
                     "title": [
                         "service",
@@ -731,12 +875,12 @@
             "video": null
         }
     ],
-    "startedTestsAt": "2024-11-13T05:02:11.782Z",
-    "totalDuration": 5859,
+    "startedTestsAt": "2024-11-19T10:28:19.010Z",
+    "totalDuration": 13216,
     "totalFailed": 1,
-    "totalPassed": 26,
+    "totalPassed": 29,
     "totalPending": 0,
     "totalSkipped": 0,
-    "totalSuites": 11,
-    "totalTests": 27
+    "totalSuites": 16,
+    "totalTests": 30
 }
